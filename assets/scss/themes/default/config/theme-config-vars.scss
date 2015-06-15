@@ -1,10 +1,13 @@
-
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic);
 // =====================================================================================================================
 // Match the old console color settings
 
 $theme-color-dark:   $color-1;
 $theme-color-light:  $color-6;
 $theme-color-accent: $color-2;
+$theme-color-header: #fff;
+$theme-color-title : #444;
+
 
 // Some other color schemes for testing
 // Arktis
@@ -89,7 +92,10 @@ $theme-box-shadow-width: 2px;
 // =====================================================================================================================
 // Typography
 
-$cc-font-default: "Helvetica Neue", HelveticaNeue, "Helvetica-Neue", Helvetica, "BBAlpha Sans", sans-serif;
+$cc-font-default: "Source Sans Pro", sans-serif, Helvetica, "BBAlpha Sans", sans-serif;
 
+$cc-font-size-title: 18px;
 $cc-font-size-regular: 13px;
 $cc-font-size-small:   12px;
+
+$font-weight-title-bold :600;

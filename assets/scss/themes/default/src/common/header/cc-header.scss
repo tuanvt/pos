@@ -4,8 +4,9 @@ $theme-header__icon-font-size: 18px;
 $theme-header__element-height: 44px;
 
 // Header Box
-$theme-header__padding-x:      4px;
-$theme-header__padding-y:      6px;
+$theme-header__padding-x:       4px;
+$theme-header__padding-y:       6px;
+$theme-header__title_padding-y: 12px;
 $theme-header__paddings:       $theme-header__padding-y $theme-header__padding-x;
 $theme-header__shadow-size:    $theme-box-shadow-width;
 
@@ -23,34 +24,24 @@ $theme-header__logo-height:    $theme-header__element-height;
 $theme-header__logo-big:       $logo-big;
 $theme-header__logo-small:     $logo-small;
 
-// The header is special. We need to make sure it works with all kinds of logos
-// and even when the toolbar is set to white.
-$theme-header-icon-color: $theme-color-light;
-$theme-header-icon-background-color: $theme-color-accent__tinted--25;
 
-$theme-header-icon-color-lightness: lightness($theme-header-icon-color);
-$theme-header-icon-background-color-lightness: lightness($theme-header-icon-background-color);
-
-@if abs($theme-header-icon-color-lightness - $theme-header-icon-background-color-lightness) < 20 {
-    @if $theme-header-icon-background-color-lightness > 50 {
-        $theme-header-icon-color: lighten(invert($theme-header-icon-color), 30%);
-    } @else {
-        $theme-header-icon-color: darken(invert($theme-header-icon-color), 30%);
-    }
-}
 
 .cc-header {
-    background: $theme-color-accent;
+    background: $theme-color-header;
     padding: $theme-header__paddings;
     box-shadow: 0 $theme-header__shadow-size 0 $theme-color-accent__darker--10;
 }
 
 .cc-header__icon {
-    color: $theme-header-icon-color;
-    background: $theme-header-icon-background-color;
-    box-shadow: 0 1px 0 0 $theme-color-accent__darker--20;
+
+    background: $theme-color-header;
+    // box-shadow: 0 1px 0 0 $theme-color-accent__darker--20;
     border-radius: $theme-border-radius--basic;
+    text-align: center;
+
+
 }
+
 
 .cc-header__icon-badge {
     background: $theme-color-dark;
@@ -85,13 +76,20 @@ $theme-header-icon-background-color-lightness: lightness($theme-header-icon-back
 
 .cc-header__logo {
     display: block;
+    color: $theme-color-title;
+    font-weight : $font-weight-title-bold;
+    font-size: $cc-font-size-title;
+    text-decoration: none;
+    padding-top: $theme-header__title_padding-y;
+    text-align: center;
     height: $theme-header__logo-height;
-    background-image: $theme-header__logo-small;
+    // background-image: $theme-header__logo-small;
 
     @include breakpoint(wide) {
-        background-image: $theme-header__logo-big;
+        // background-image: $theme-header__logo-big;
     }
 }
+
 
 .cc-header__icon--sidemenu {
     @extend .fa;
